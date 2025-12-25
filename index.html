@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Animasi Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- 1️⃣ SALAM PEMBUKA -->
+    <section class="hero" id="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="main-title">
+                <span class="title-word">Hai!</span>
+                <span class="title-word">Saya</span>
+                <span class="title-word">Riyan</span>
+            </h1>
+            <p class="subtitle">Front-End Developer & Motion Designer</p>
+            <div class="sparkle-container"></div>
+        </div>
+        <div class="scroll-down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll untuk jelajahi</p>
+        </div>
+    </section>
+
+    <!-- 2️⃣ PENJELASAN WEBSITE -->
+    <section class="explanation" id="explanation">
+        <div class="container">
+            <div class="message-card glass">
+                <h2><i class="fas fa-code"></i> Tentang Website Ini</h2>
+                <div class="typewriter-text">
+                    <p>Halo! Website ini dibuat sebagai <span class="highlight">referensi portofolio</span>.</p>
+                    <p>Silakan <span class="highlight">meniru sebagian</span> — atau bahkan semua jika kamu berani!</p>
+                    <p>Tapi fair warning: meniru semua itu <span class="highlight">tantangan serius</span> lho!</p>
+                    <p>Kode sumber akan saya publikasikan <span class="highlight">seminggu setelah</span> website ini live.</p>
+                </div>
+                <div class="interactive-buttons">
+                    <button class="fun-btn" id="agree-btn">
+                        <i class="fas fa-thumbs-up"></i> Setuju!
+                    </button>
+                    <button class="fun-btn" id="challenge-btn">
+                        <i class="fas fa-gamepad"></i> Tantangan Diterima!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3️⃣ MINI GAME MATEMATIKA -->
+    <section class="game-section" id="game">
+        <div class="container">
+            <h2><i class="fas fa-gamepad"></i> Game Matematika Seru!</h2>
+            <div class="game-container glass">
+                <div class="game-header">
+                    <div class="score-board">
+                        <span>Skor: <span id="score">0</span></span>
+                        <span>Waktu: <span id="timer">60</span>s</span>
+                    </div>
+                    <div class="difficulty-selector">
+                        <button class="diff-btn active" data-level="easy">Mudah</button>
+                        <button class="diff-btn" data-level="medium">Sedang</button>
+                        <button class="diff-btn" data-level="hard">Sulit</button>
+                    </div>
+                </div>
+                
+                <div class="game-question">
+                    <h3 id="question">5 + 3 = ?</h3>
+                </div>
+                
+                <div class="game-input">
+                    <input type="number" id="answer-input" placeholder="Masukkan jawaban...">
+                    <button id="submit-answer">Jawab!</button>
+                    <button id="next-question">Lewati</button>
+                </div>
+                
+                <div class="game-feedback">
+                    <div id="feedback-text"></div>
+                    <div id="emoji-display">😊</div>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="start-game">Mulai Game</button>
+                    <button id="reset-game">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4️⃣ KEAHLIAN SAYA -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Keahlian Saya</h2>
+            <div class="skills-content">
+                <div class="video-container glass">
+                    <video autoplay muted loop playsinline class="profile-video">
+                        <source src="assets/keahlian.mp4" type="video/mp4">
+                        Browser kamu tidak mendukung video tag.
+                    </video>
+                    <div class="video-frame"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Skill cards akan di-generate oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5️⃣ ABOUT ME -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2><i class="fas fa-user"></i> Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text glass">
+                    <div class="info-card">
+                        <h3>Profil Singkat</h3>
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <div>
+                                <strong>Umur:</strong>
+                                <span>15 tahun</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>Kelas:</strong>
+                                <span>9</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-school"></i>
+                            <div>
+                                <strong>Sekolah:</strong>
+                                <span>SMPN 1 Cilebak</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Minat:</strong>
+                                <span>Web Development, Animasi, Game Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-image-container glass">
+                    <div class="image-frame">
+                        <img src="assets/profile.jpg" alt="Foto Profil" class="profile-img">
+                        <div class="frame-decoration"></div>
+                    </div>
+                    <div class="image-caption">
+                        <p><i class="fas fa-quote-left"></i> Belajar, buat, ulangi! <i class="fas fa-quote-right"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6️⃣ CONTACT ME -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> Hubungi Saya</h2>
+            <div class="contact-cards">
+                <a href="tel:08157149396" class="contact-card glass" id="phone-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Telepon / WhatsApp</h3>
+                        <p>0815 7149 396</p>
+                    </div>
+                    <div class="contact-hover-effect"></div>
+                </a>
+                
+                <a href="mailto:muhammadriyan1023@gmail.com" class="contact-card glass" id="email-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Email</h3>
+                        <p>muhammadriyan1023@gmail.com</p>
+                    </div>
+                    <div class="contact-hover-effect"></div>
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <button class="social-btn" data-tooltip="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="social-btn" data-tooltip="GitHub">
+                    <i class="fab fa-github"></i>
+                </button>
+                <button class="social-btn" data-tooltip="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#hero" class="nav-link active">🏠 Home</a></li>
+            <li><a href="#explanation" class="nav-link">📝 Info</a></li>
+            <li><a href="#game" class="nav-link">🎮 Game</a></li>
+            <li><a href="#skills" class="nav-link">⚡ Skills</a></li>
+            <li><a href="#about" class="nav-link">👤 About</a></li>
+            <li><a href="#contact" class="nav-link">📞 Contact</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
